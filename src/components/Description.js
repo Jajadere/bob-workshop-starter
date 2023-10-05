@@ -8,12 +8,7 @@ function Description() {
         Om Meg
       </Typography>
       <Typography>
-        Hei! Dette bildet er av en sjarmerende blomst hentet fra Unsplash.
-        Unsplash tilbyr et bredt utvalg av gratis bilder av høy kvalitet som kan
-        brukes til forskjellige formål. Så hvis du leter etter inspirerende
-        bilder for ditt neste prosjekt, anbefales det å sjekke ut Unsplash. For
-        øvrig, denne teksten ble generert med hjelp av ChatGPT fra OpenAI.
-        Fascinerende, ikke sant?
+      En fin utsikt kan gi oss glede, inspirasjon og ro. Den kan være over et naturlandskap, en storby eller en himmel full av stjerner. En fin utsikt kan få oss til å stoppe opp og beundre verden rundt oss. 
       </Typography>
     </Box>
   );
