@@ -8,6 +8,7 @@ import {
   Snackbar,
   CircularProgress,
   Stack,
+  Avatar
 } from "@mui/material";
 
 function ContactForm() {
@@ -42,12 +43,32 @@ function ContactForm() {
 
       if (data.success) {
         setSnackbarMessage(
-          "Din melding har blitt sendt! Takk for at du kontaktet oss."
+          <Avatar
+          src="/Testbilde.jpg"
+          alt="Utsikt"
+          sx={{
+            width: 250,
+            height: 250,
+            margin: "auto",
+            border: "4px solid #3f51b5",
+            borderRadius: "20%"
+          }}
+        />
         );
         setSnackbarType("success");
         setFormData({ email: "", message: "" });
       } else {
-        setSnackbarMessage("Noe gikk galt. Prøv igjen senere.");
+        setSnackbarMessage(    <Avatar
+          src="\fat-cat-laser-eyes.gif"
+          alt="Utsikt"
+          sx={{
+            width: 250,
+            height: 250,
+            margin: "auto",
+            border: "4px solid #3f51b5",
+            borderRadius: "20%"
+          }}
+        />);
         setSnackbarType("error");
       }
     } catch (error) {
@@ -60,9 +81,10 @@ function ContactForm() {
 
   return (
     <Box py={5} bgcolor="#ffffff" borderRadius={3} boxShadow={3} mt={4} px={3}>
-      <Typography variant="h6" gutterBottom color="#3f51b5">
-        Vennligst ikke ta kontakt
+      <Typography variant="h4" gutterBottom color="#3f51b5">
+        Ta kontakt og se hva som skjer
       </Typography>
+    
 
       <Stack component="form" onSubmit={handleSubmit} spacing={2}>
         <TextField
