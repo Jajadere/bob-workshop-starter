@@ -61,7 +61,7 @@ function ContactForm() {
   return (
     <Box py={5} bgcolor="#ffffff" borderRadius={3} boxShadow={3} mt={4} px={3}>
       <Typography variant="h6" gutterBottom color="#3f51b5">
-        Kontakt Meg
+        Vennligst ikke ta kontakt
       </Typography>
 
       <Stack component="form" onSubmit={handleSubmit} spacing={2}>
