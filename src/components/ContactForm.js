@@ -17,6 +17,7 @@ function ContactForm() {
     message: "",
   });
   const [snackbarMessage, setSnackbarMessage] = useState("");
+  const [snackbarduration, setSnackbarduration] = useState(0);
   const [snackbarType, setSnackbarType] = useState("success");
   const [loading, setLoading] = useState(false);
 
@@ -35,7 +36,7 @@ function ContactForm() {
         },
         body: JSON.stringify({
           ...formData,
-          access_key: "HER-MÅ-DU-LEGGE-INN-DIN-ACCESS-KEY", // Get your access key from https://web3forms.com/
+          access_key: "f8567def-b60c-45b9-a7e4-0a351cc3c6e4", // Get your access key from https://web3forms.com/
         }),
       });
 
@@ -44,7 +45,7 @@ function ContactForm() {
       if (data.success) {
         setSnackbarMessage(
           <Avatar
-          src="/Testbilde.jpg"
+          src="\cat-cat-door.gif"
           alt="Utsikt"
           sx={{
             width: 250,
@@ -56,20 +57,22 @@ function ContactForm() {
         />
         );
         setSnackbarType("success");
+        setSnackbarduration(8000  )
         setFormData({ email: "", message: "" });
       } else {
         setSnackbarMessage(    <Avatar
           src="\fat-cat-laser-eyes.gif"
           alt="Utsikt"
           sx={{
-            width: 250,
-            height: 250,
+            width: 500,
+            height: 500,
             margin: "auto",
             border: "4px solid #3f51b5",
             borderRadius: "20%"
           }}
         />);
         setSnackbarType("error");
+        setSnackbarduration(5000)
       }
     } catch (error) {
       setSnackbarMessage("Noe gikk galt. Prøv igjen senere.");
@@ -81,7 +84,7 @@ function ContactForm() {
 
   return (
     <Box py={5} bgcolor="#ffffff" borderRadius={3} boxShadow={3} mt={4} px={3}>
-      <Typography variant="h4" gutterBottom color="#3f51b5">
+      <Typography variant="h5" gutterBottom color="#3f51b5">
         Ta kontakt og se hva som skjer
       </Typography>
     
@@ -124,7 +127,7 @@ function ContactForm() {
 
       <Snackbar
         open={Boolean(snackbarMessage)}
-        autoHideDuration={6000}
+        autoHideDuration={snackbarduration}
         onClose={() => setSnackbarMessage("")}
       >
         <Alert
